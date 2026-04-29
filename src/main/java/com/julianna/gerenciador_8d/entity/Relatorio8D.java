@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity@Table(name = "relatorio_8d")
 public class Relatorio8D {
@@ -33,6 +35,9 @@ public class Relatorio8D {
  @Column(nullable = false, updatable = false)
  private LocalDateTime dataCriacao;
 
+ @OneToMany(mappedBy = "relatorio8D", cascade = CascadeType.ALL, orphanRemoval = true)
+ private List<Etapas> etapas = new ArrayList<>();
+
  @PrePersist protected void onCreate() {
  this.dataCriacao = LocalDateTime.now();
  }
@@ -43,4 +48,5 @@ public class Relatorio8D {
  PENDENTE }
 
 }
+
 
