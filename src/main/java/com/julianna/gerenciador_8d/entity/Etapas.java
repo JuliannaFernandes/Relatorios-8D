@@ -28,6 +28,9 @@ private tipoEtapa tipoEtapa;
 @JoinColumn(name = "relatorio_8d_id", nullable = false)
 private Relatorio8D relatorio8D;
 
+@OneToMany(mappedBy = "etapas", cascade = CascadeType.ALL, orphanRemoval = true)
+private java.util.List<Acao> acao = new java.util.ArrayList<>();
+
 public enum tipoEtapa {
     D1,
     D2,
