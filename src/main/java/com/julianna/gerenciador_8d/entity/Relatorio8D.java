@@ -8,23 +8,21 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+@Setter
+@Getter
 @Entity@Table(name = "relatorio_8d")
 public class Relatorio8D {
 
- @Getter
- @Setter
  @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
  private Long id;
 
- @Setter
- @Getter
+
  @Column(nullable = false)
  private String titulo;
 
  @Column(nullable = false)
  private String cliente;
 
- @Getter
  @Column(nullable = false, length =2000)
  private String descricao;
 
