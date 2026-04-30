@@ -22,20 +22,8 @@ package com.julianna.gerenciador_8d.entity;
         @Column(nullable = false)
         private LocalDateTime dataPrazo;
 
-        @Column(nullable = false)
-        private TipoArquivo tipoArquivo;
-
         @ManyToOne(fetch = FetchType.LAZY)
         @JoinColumn(name = "etapa_8d_id", nullable = false)
         private Etapas etapa8D;
 
-        public enum TipoArquivo {
-            DOCUMENTO,
-            IMAGEM,
-            VIDEO,
-            EXCEL,
-            WORD,
-            PDF,
-            OUTRO
-        }
     }
